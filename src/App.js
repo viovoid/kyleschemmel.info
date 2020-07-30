@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { Router } from '@reach/router';
 
-function App() {
+import Home from './routes/Home';
+import Alt from './routes/Alt';
+import Login from './routes/Login';
+import NotFound from './routes/NotFound';
+
+const App = () => {
+  const [isAuth, setAuth] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Login
+        callback={() => setAuth(!isAuth)}
+        isAuth={isAuth}
+        path="/"
+      />
+      <Home path="/home" isAuth={isAuth} />
+      <Alt path="/alt" isAuth={isAuth} />
+      <NotFound default />
+    </Router>
   );
 }
 
