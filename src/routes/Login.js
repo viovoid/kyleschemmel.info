@@ -9,7 +9,7 @@ console.log(props);
       <header className="App-header">
         <p>
           {props.isAuth}
-          <button onClick={props.callback}>
+          <button onClick={() => props.setAuth(true)}>
             Log in
           </button>
           <button onClick={() => props.navigate('/home')}>
