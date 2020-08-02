@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './App.css';
 import { Router } from '@reach/router';
 
-import AuthRoute from './routes/AuthRoute';
 import Home from './routes/Home';
 import Alt from './routes/Alt';
 import Login from './routes/Login';

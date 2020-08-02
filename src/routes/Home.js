@@ -2,11 +2,11 @@ import React from 'react';
 import '../App.css';
 
 const Home = (props) => {
-  console.log(props.isAuth);
+  console.log(props.suth);
   return (
     <div className="App">
       <header className="App-header">
-        Home
+        {JSON.stringify(props.auth)}
       </header>
     </div>
   );
