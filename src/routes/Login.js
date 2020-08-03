@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
-import { Button, Container, FormControl, TextField } from '@material-ui/core';
+import { Button, CircularProgress, FormControl, Grid, TextField } from '@material-ui/core';
 
-import { get, login } from '../Api';
+import { get, login } from '../api';
 
 const Login = (props) => {
 
@@ -51,14 +51,24 @@ const Login = (props) => {
 
   if (attempting) {
     return (
-      <Container>
-        Attempting login...
-      </Container>
+      <Grid
+        container
+        alignItems="center"
+        justify="center"
+        style={{ minHeight: '100vh' }}
+      >
+        <CircularProgress />
+      </Grid>
     );
   }
 
   return (
-    <Container>
+    <Grid
+      container
+      alignItems="center"
+      justify="center"
+      style={{ minHeight: '100vh' }}
+    >
       <FormControl>
         <TextField
           onChange={({ target }) => setUsername(target.value)}
@@ -74,7 +84,7 @@ const Login = (props) => {
           Log in
         </Button>
       </FormControl>
-    </Container>
+    </Grid>
   );
 }
 

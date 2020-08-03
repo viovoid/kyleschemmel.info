@@ -38,6 +38,7 @@ export const login = async (username, password) => {
     return auth;
   } catch (e) {
     console.warn(e);
+    return null;
   }
 }
 
