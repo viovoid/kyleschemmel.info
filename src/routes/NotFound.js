@@ -7,6 +7,8 @@ const NotFound = ({ navigate }) => {
       <header className="App-header">
         <p>
           Not Found
+          <br />
+          <br />
           <button onClick={() => 
             //navigate(-1) //XXX: router bug: https://github.com/reach/router/issues/44
             window.history.back()

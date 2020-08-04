@@ -31,10 +31,10 @@ export const login = async (username, password) => {
   body.append('username', username);
   body.append('password', password);
   try {
-    const res = await fetch(makePath('/auth/login/'), { method: 'POST', body });
+    const res = await fetch(makePath('/auth/login'), { method: 'POST', body });
     const token = await res.json();
     localStorage.setItem('token', token.key || '');
-    const auth = await get('/auth/user/');
+    const auth = await get('/auth/user');
     return auth;
   } catch (e) {
     console.warn(e);
