@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import '../main.css';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Button, CircularProgress, FormControl, Grid, TextField } from '@material-ui/core';
