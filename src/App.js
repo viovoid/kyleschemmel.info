@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './App.css';
+//import './App.css';
 import { Router } from '@reach/router';
 
 import Home from './routes/Home';
-import Alt from './routes/Alt';
+import Brews from './routes/Brews';
 import Login from './routes/Login';
 import NotFound from './routes/NotFound';
 
@@ -18,7 +18,8 @@ const App = () => {
       {auth
         ? <Frame default>
             <Home path="/" auth={auth} />
-            <Alt path="/alt" auth={auth} />
+            
+            <Brews path="/brews/*" auth={auth} />
             <NotFound default />
           </Frame>
         : <Login

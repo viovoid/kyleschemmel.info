@@ -1,13 +1,13 @@
 
-const BASE_PATH = 'http://bringer:9090/api/v1';
+const BASE_PATH = 'http://127.0.0.1:9090/api/v1';
 
-const authHeaders = () => {
+const makeHeaders = (headers = {}) => {
   const token = localStorage.getItem('token');
   if (token) {
-    return { Authorization: `Token ${token}` };
-  } else {
-    return {};
+    headers['authorization'] = `Token ${token}`;
   }
+  headers['content-type'] = 'application/json';
+  return headers;
 }
 
 const makePath = (path) => {
@@ -15,16 +15,30 @@ const makePath = (path) => {
   return `${BASE_PATH}${path}/`;
 }
 
-export const get = async (path, opts) => {
-    try {
-      const headers = authHeaders();
-      const res = await fetch(makePath(path), { headers });
-      const jres = await res.json();
-      return jres;
-    } catch (e) {
-      console.warn(e);
-    }
+export const get = async (path, opts = {}) => {
+  try {
+    opts.headers = makeHeaders(opts.headers);
+    opts.method = 'GET';
+    const res = await fetch(makePath(path), opts);
+    const jres = await res.json();
+    return jres;
+  } catch (e) {
+    console.warn(e);
   }
+}
+
+export const post = async (path, body, opts = {}) => {
+  try {
+    opts.headers = makeHeaders(opts.headers);
+    opts.method = 'POST';
+    opts.body = body;
+    const res = await fetch(makePath(path), opts);
+    const jres = await res.json();
+    return jres;
+  } catch (e) {
+    console.warn(e);
+  }
+}
 
 export const login = async (username, password) => {
   const body = new FormData();

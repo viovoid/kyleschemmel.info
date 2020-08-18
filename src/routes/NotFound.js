@@ -1,23 +1,29 @@
 import React from 'react';
-import '../App.css';
+
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
 const NotFound = ({ navigate }) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Not Found
-          <br />
-          <br />
-          <button onClick={() => 
-            //navigate(-1) //XXX: router bug: https://github.com/reach/router/issues/44
-            window.history.back()
-          }>
-            Go Back
-          </button>
-        </p>
-      </header>
-    </div>
+    <Grid
+      container
+      alignItems="center"
+      justify="center"
+      direction="column"
+      style={{ minHeight: '100vh' }}
+    >
+      Not Found
+      <Button
+        variant="outlined"
+        style={{ margin: 16 }}
+        onClick={() => 
+          //navigate(-1) //XXX: router bug: https://github.com/reach/router/issues/44
+          window.history.back()
+        }
+      >
+        Go Back
+      </Button>
+    </Grid>
   );
 }
 

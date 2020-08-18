@@ -14,11 +14,7 @@ import Header from './Header';
 
 let theme = createMuiTheme({
   palette: {
-    primary: {
-      light: '#63ccff',
-      main: '#009be5',
-      dark: '#006db3',
-    },
+    type: 'dark',
   },
   typography: {
     h5: {
@@ -130,7 +126,7 @@ const styles = {
     minHeight: '100vh',
   },
   drawer: {
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       width: drawerWidth,
       flexShrink: 0,
     },
@@ -143,16 +139,14 @@ const styles = {
   main: {
     flex: 1,
     padding: theme.spacing(6, 4),
-    background: '#eaeff1',
   },
   footer: {
     padding: theme.spacing(2),
-    background: '#eaeff1',
   },
 };
 
 const Frame = (props) => {
-  const { classes, children, navigate, path, ...other } = props;
+  const { classes, navigate } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -164,18 +158,20 @@ const Frame = (props) => {
       <div className={classes.root}>
         <CssBaseline />
         <nav className={classes.drawer}>
-          <Hidden smUp implementation="js">
+          <Hidden mdUp>
             <Sidebar
               PaperProps={{ style: { width: drawerWidth } }}
               variant="temporary"
               open={mobileOpen}
               onClose={handleDrawerToggle}
               navigate={navigate}
-              path={path}
             />
           </Hidden>
-          <Hidden xsDown implementation="css">
-            <Sidebar navigate={navigate} path={path} PaperProps={{ style: { width: drawerWidth } }} />
+          <Hidden smDown>
+            <Sidebar
+              PaperProps={{ style: { width: drawerWidth } }}
+              navigate={navigate}
+            />
           </Hidden>
         </nav>
         <div className={classes.app}>
@@ -189,7 +185,7 @@ const Frame = (props) => {
               <Link color="inherit" href="https://mirrod.in/">
                 Kyle Schemmel
               </Link>{' '}
-              {new Date().getFullYear()}.
+              {new Date().getFullYear()}
             </Typography>
           </footer>
         </div>

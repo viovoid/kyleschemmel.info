@@ -8,29 +8,24 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import AddIcon from '@material-ui/icons/Add';
+import HomeIcon from '@material-ui/icons/Home';
+import ListIcon from '@material-ui/icons/List';
 
-const icon = null;
 const categories = [
   {
     id: 'Brews',
     children: [
       {
         id: 'List Brews',
-        icon,
-        path: '/brews/list',
+        icon: <ListIcon />,
+        path: '/brews',
       },
       {
         id: 'New Brew',
-        icon,
+        icon: <AddIcon />,
         path: '/brews/new',
       },
-    ],
-  },
-  {
-    id: 'Util',
-    children: [
-      { id: 'Reports', icon },
-      { id: 'Config', icon },
     ],
   },
 ];
@@ -57,7 +52,7 @@ const styles = (theme) => ({
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
   },
-  firebase: {
+  title: {
     fontSize: 24,
     color: theme.palette.common.white,
   },
@@ -78,25 +73,26 @@ const styles = (theme) => ({
 
 const Sidebar = (props) => {
   const { classes, navigate, ...other } = props;
+  const { pathname } = window.location;
 
   return (
     <Drawer variant="permanent" {...other}>
       <List disablePadding>
         <ListItem
-          className={clsx(classes.firebase, classes.item, classes.itemCategory)}
+          className={clsx(classes.title, classes.item, classes.itemCategory)}
         >
-          Paperbase
+          Fermon
         </ListItem>
         <ListItem className={clsx(classes.item, classes.itemCategory)}>
           <ListItemIcon className={classes.itemIcon}>
-            {null}
+            <HomeIcon />
           </ListItemIcon>
           <ListItemText
             classes={{
               primary: classes.itemPrimary,
             }}
           >
-            Project Overview
+            Overview
           </ListItemText>
         </ListItem>
         {categories.map(({ id, children }) => (
@@ -114,7 +110,7 @@ const Sidebar = (props) => {
               <ListItem
                 key={childId}
                 button
-                className={clsx(classes.item, path === props.path && classes.itemActiveItem)}
+                className={clsx(classes.item, path === pathname && classes.itemActiveItem)}
                 onClick={() => navigate(path)}
               >
                 <ListItemIcon className={classes.itemIcon}>{icon}</ListItemIcon>

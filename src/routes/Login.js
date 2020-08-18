@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import '../App.css';
-import { createMuiTheme, withStyles, ThemeProvider } from '@material-ui/core/styles';
+import '../main.css';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Button, CircularProgress, FormControl, Grid, TextField } from '@material-ui/core';
 
