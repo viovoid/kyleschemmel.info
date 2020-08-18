@@ -1,13 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { withStyles } from '@material-ui/core/styles';
-import Divider from '@material-ui/core/Divider';
-import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
+import { Divider, Drawer, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import AddIcon from '@material-ui/icons/Add';
 import HomeIcon from '@material-ui/icons/Home';
 import ListIcon from '@material-ui/icons/List';
@@ -30,7 +24,7 @@ const categories = [
   },
 ];
 
-const styles = (theme) => ({
+const useStyles = makeStyles((theme) => ({
   categoryHeader: {
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
@@ -69,10 +63,11 @@ const styles = (theme) => ({
   divider: {
     marginTop: theme.spacing(2),
   },
-});
+}));
 
 const Sidebar = (props) => {
-  const { classes, navigate, ...other } = props;
+  const { navigate, ...other } = props;
+  const classes = useStyles();
   const { pathname } = window.location;
 
   return (
@@ -132,8 +127,4 @@ const Sidebar = (props) => {
   );
 }
 
-Sidebar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(Sidebar);
+export default Sidebar;

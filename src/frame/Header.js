@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { AppBar, Grid, Hidden, IconButton, Toolbar } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import PersonIcon from '@material-ui/icons/Person';
-import { withStyles } from '@material-ui/core/styles';
 
 const lightColor = 'rgba(255, 255, 255, 0.7)';
 
-const styles = (theme) => ({
+const useStyles = makeStyles((theme) => ({
   secondaryBar: {
     zIndex: 0,
   },
@@ -27,10 +27,11 @@ const styles = (theme) => ({
   button: {
     borderColor: lightColor,
   },
-});
+}));
 
 const Header = (props) => {
-  const { classes, onDrawerToggle } = props;
+  const { onDrawerToggle } = props;
+  const classes = useStyles();
 
   return (
     <>
@@ -63,8 +64,7 @@ const Header = (props) => {
 }
 
 Header.propTypes = {
-  classes: PropTypes.object.isRequired,
   onDrawerToggle: PropTypes.func.isRequired,
 };
 
-export default withStyles(styles)(Header);
+export default Header;

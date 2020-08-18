@@ -1,14 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {
-  createMuiTheme,
-  ThemeProvider,
-  withStyles,
-} from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Hidden from '@material-ui/core/Hidden';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import { Link, Hidden, Typography } from '@material-ui/core';
+import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/styles';
+
 import Sidebar from './Sidebar';
 import Header from './Header';
 
@@ -120,7 +113,7 @@ theme = {
 
 const drawerWidth = 256;
 
-const styles = {
+const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     minHeight: '100vh',
@@ -143,10 +136,11 @@ const styles = {
   footer: {
     padding: theme.spacing(2),
   },
-};
+}));
 
 const Frame = (props) => {
-  const { classes, navigate } = props;
+  const { navigate } = props;
+  const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -156,7 +150,6 @@ const Frame = (props) => {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
-        <CssBaseline />
         <nav className={classes.drawer}>
           <Hidden mdUp>
             <Sidebar
@@ -194,8 +187,4 @@ const Frame = (props) => {
   );
 }
 
-Frame.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(Frame);
+export default Frame;
