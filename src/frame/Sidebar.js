@@ -4,28 +4,34 @@ import { Divider, Drawer, List, ListItem, ListItemIcon, ListItemText } from '@ma
 import { makeStyles } from '@material-ui/core/styles';
 
 import HomeIcon from '@material-ui/icons/Home';
-import DescriptionIcon from '@material-ui/icons/Description';
-import BookIcon from '@material-ui/icons/Book';
-import CardIcon from '@material-ui/icons/ViewCarousel';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import BuildIcon from '@material-ui/icons/Build';
+import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
+import ContactMailIcon from '@material-ui/icons/ContactMail';
 
 const categories = [
   {
     id: 'Pages',
     children: [
       {
-        id: 'Manifesto',
-        icon: <DescriptionIcon />,
-        path: '/manifesto',
+        id: 'About Me',
+        icon: <AccountBoxIcon />,
+        path: '/about',
       },
       {
-        id: 'Blog',
-        icon: <BookIcon />,
-        path: '/blog',
+        id: 'Services',
+        icon: <BuildIcon />,
+        path: '/services',
       },
       {
-        id: 'Magic Cards',
-        icon: <CardIcon />,
-        path: '/cards',
+        id: 'Portfolio',
+        icon: <BusinessCenterIcon />,
+        path: '/portfolio',
+      },
+      {
+        id: 'Contact',
+        icon: <ContactMailIcon />,
+        path: '/contact',
       },
     ],
   },

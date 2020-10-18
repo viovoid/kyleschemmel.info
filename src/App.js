@@ -1,11 +1,12 @@
 import React from 'react';
 import { Router } from '@reach/router';
 
-import Home from './routes/Home';
+//import Home from './routes/Home';
 import NotFound from './routes/NotFound';
-import Manifesto from './routes/Pages/Manifesto';
-import Blog from './routes/Pages/Blog';
-import Cards from './routes/Pages/Cards';
+import About from './routes/Pages/About';
+import Contact from './routes/Pages/Contact';
+import Portfolio from './routes/Pages/Portfolio';
+import Services from './routes/Pages/Services';
 
 import Frame from './frame/Frame';
 
@@ -15,10 +16,12 @@ const App = () => {
   return (
     <Router>
       <Frame default>
-        <Home path="/" />
-        <Manifesto path="/manifesto" />
-        <Blog path="/blog" />
-        <Cards path="/cards" />
+        {/*<Home path="/" />*/}
+        <About path="/" />
+        <About path="/about" />
+        <Contact path="/contact" />
+        <Portfolio path="/portfolio" />
+        <Services path="/services" />
         <NotFound default />
       </Frame>
     </Router>
