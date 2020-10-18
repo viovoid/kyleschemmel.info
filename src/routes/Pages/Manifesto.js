@@ -7,15 +7,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Home = (props) => {
+const Manifesto = (props) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <header>
-        Welcome to mirrod.in
+        Manifesto
       </header>
     </div>
   );
 }
 
-export default Home;
+export default Manifesto;

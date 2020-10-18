@@ -2,23 +2,30 @@ import React from 'react';
 import clsx from 'clsx';
 import { Divider, Drawer, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import AddIcon from '@material-ui/icons/Add';
+
 import HomeIcon from '@material-ui/icons/Home';
-import ListIcon from '@material-ui/icons/List';
+import DescriptionIcon from '@material-ui/icons/Description';
+import BookIcon from '@material-ui/icons/Book';
+import CardIcon from '@material-ui/icons/ViewCarousel';
 
 const categories = [
   {
-    id: 'Brews',
+    id: 'Pages',
     children: [
       {
-        id: 'List Brews',
-        icon: <ListIcon />,
-        path: '/brews',
+        id: 'Manifesto',
+        icon: <DescriptionIcon />,
+        path: '/manifesto',
       },
       {
-        id: 'New Brew',
-        icon: <AddIcon />,
-        path: '/brews/new',
+        id: 'Blog',
+        icon: <BookIcon />,
+        path: '/blog',
+      },
+      {
+        id: 'Magic Cards',
+        icon: <CardIcon />,
+        path: '/cards',
       },
     ],
   },
@@ -76,7 +83,7 @@ const Sidebar = (props) => {
         <ListItem
           className={clsx(classes.title, classes.item, classes.itemCategory)}
         >
-          Fermon
+          mirrod.in
         </ListItem>
         <ListItem className={clsx(classes.item, classes.itemCategory)}>
           <ListItemIcon className={classes.itemIcon}>

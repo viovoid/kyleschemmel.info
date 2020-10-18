@@ -180,6 +180,9 @@ const Frame = (props) => {
               </Link>{' '}
               {new Date().getFullYear()}
             </Typography>
+            <Typography variant="body2" color="textSecondary" align="center">
+              Built and hosted using solely Free Software
+            </Typography>
           </footer>
         </div>
       </div>
