@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { AppBar, Grid, Hidden, IconButton, Toolbar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
-import PersonIcon from '@material-ui/icons/Person';
 
 const lightColor = 'rgba(255, 255, 255, 0.7)';
 
@@ -51,11 +50,6 @@ const Header = (props) => {
               </Grid>
             </Hidden>
             <Grid item xs />
-            <Grid item>
-              <IconButton color="inherit" className={classes.iconButtonAvatar}>
-                <PersonIcon />
-              </IconButton>
-            </Grid>
           </Grid>
         </Toolbar>
       </AppBar>
