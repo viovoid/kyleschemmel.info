@@ -1,9 +1,10 @@
 import React from 'react';
-import { CssBaseline, Link, Hidden, Typography } from '@material-ui/core';
+import { CssBaseline, Hidden } from '@material-ui/core';
 import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/styles';
 
 import Sidebar from './Sidebar';
 import Header from './Header';
+import Footer from './Footer';
 
 let theme = createMuiTheme({
   palette: {
@@ -174,21 +175,7 @@ const Frame = (props) => {
           <main className={classes.main}>
             {props.children}
           </main>
-          <footer className={classes.footer}>
-            <Typography variant="body2" color="textSecondary" align="center">
-              {'Copyright © '}
-              <Link color="inherit" href="https://mirrod.in/">
-                Kyle Schemmel
-              </Link>{' '}
-              {new Date().getFullYear()}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" align="center">
-              Built and hosted using free software exclusively
-            </Typography>
-            <Typography variant="body2" color="textSecondary" align="center">
-              Source available <a href="https://gitlab.com/biovoid/kyleschemmel.info">here</a>.
-            </Typography>
-          </footer>
+          <Footer />
         </div>
       </div>
     </ThemeProvider>
