@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Hidden, Typography } from '@material-ui/core';
+import { CssBaseline, Link, Hidden, Typography } from '@material-ui/core';
 import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/styles';
 
 import Sidebar from './Sidebar';
@@ -8,6 +8,7 @@ import Header from './Header';
 let theme = createMuiTheme({
   palette: {
     type: 'dark',
+    bg0: '#18202c',
   },
   typography: {
     h5: {
@@ -36,7 +37,7 @@ theme = {
   overrides: {
     MuiDrawer: {
       paper: {
-        backgroundColor: '#18202c',
+        backgroundColor: theme.palette.bg0,
       },
     },
     MuiButton: {
@@ -64,7 +65,6 @@ theme = {
     MuiTab: {
       root: {
         textTransform: 'none',
-        margin: '0 16px',
         minWidth: 0,
         padding: 0,
         [theme.breakpoints.up('md')]: {
@@ -128,6 +128,7 @@ const useStyles = makeStyles((theme) => ({
     flex: 1,
     display: 'flex',
     flexDirection: 'column',
+    backgroundColor: theme.palette.bg0,
   },
   main: {
     flex: 1,
@@ -149,6 +150,7 @@ const Frame = (props) => {
 
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <div className={classes.root}>
         <nav className={classes.drawer}>
           <Hidden mdUp>
@@ -181,7 +183,10 @@ const Frame = (props) => {
               {new Date().getFullYear()}
             </Typography>
             <Typography variant="body2" color="textSecondary" align="center">
-              Built and hosted using solely Free Software
+              Built and hosted using free software exclusively
+            </Typography>
+            <Typography variant="body2" color="textSecondary" align="center">
+              Source available <a href="https://gitlab.com/biovoid/kyleschemmel.info">here</a>.
             </Typography>
           </footer>
         </div>
