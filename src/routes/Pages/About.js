@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
   body: {
   },
   headshot: {
+    margin: theme.spacing(4),
     width: 128,
   },
 }));
