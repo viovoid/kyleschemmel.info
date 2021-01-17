@@ -22,7 +22,7 @@ const Contact = (props) => {
       <Grid container direction="row">
         <Grid item xs={12}>
           <Typography className={classes.body}>
-            Questions? Comments? Proposition for work? The easiest way to get ahold of me is to <Link href="mailto:kyle.schemmel+mirrod.in@gmail.com">email me</Link>.
+            Questions? Comments? Proposition for work? The easiest way to get ahold of me is to <Link href="mailto:kyle.schemmel+kyleschemmel.info@gmail.com">email me</Link>.
             <br/><br/>
             I also encourage you to connect on <Link href="https://www.linkedin.com/in/kyle-schemmel-ba2aa858/">LinkedIn</Link>, and check out my <Link href="https://github.com/viovoid">GitHub</Link> profile.
             <br/><br/>

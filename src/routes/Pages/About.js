@@ -32,7 +32,7 @@ const About = (props) => {
             <br/><br/>
             On this website, I promote projects I am currently working on, and showcase older undertakings which I am proud of.
             <br/><br/>
-            Would you like to hire me? Please visit my <Link href="/contact">contact page</Link> for information on getting ahold of me.
+            Are you interested in working together? Please visit my <Link href="/contact">contact page</Link> for information on getting ahold of me.
           </Typography>
         </Grid>
         <Grid item xs={12} sm={3}>

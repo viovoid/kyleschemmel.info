@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import { Divider, Drawer, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import HomeIcon from '@material-ui/icons/Home';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import BuildIcon from '@material-ui/icons/Build';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
@@ -40,7 +39,7 @@ const categories = [
 const useStyles = makeStyles((theme) => ({
   categoryHeader: {
     paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
+//    paddingBottom: theme.spacing(2),
   },
   categoryHeaderPrimary: {
     color: theme.palette.common.white,
@@ -49,9 +48,11 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: 1,
     paddingBottom: 1,
     color: 'rgba(255, 255, 255, 0.7)',
+/*
     '&:hover,&:focus': {
       backgroundColor: 'rgba(255, 255, 255, 0.08)',
     },
+*/
   },
   itemCategory: {
     backgroundColor: '#232f3e',
@@ -71,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
   },
   itemIcon: {
     minWidth: 'auto',
+    marginBottom: theme.spacing(0.5),
     marginRight: theme.spacing(2),
   },
   divider: {
@@ -89,30 +91,11 @@ const Sidebar = (props) => {
         <ListItem
           className={clsx(classes.title, classes.item, classes.itemCategory)}
         >
-          mirrod.in
-        </ListItem>
-        <ListItem className={clsx(classes.item, classes.itemCategory)}>
-          <ListItemIcon className={classes.itemIcon}>
-            <HomeIcon />
-          </ListItemIcon>
-          <ListItemText
-            classes={{
-              primary: classes.itemPrimary,
-            }}
-          >
-            Overview
-          </ListItemText>
+          Kyle Schemmel
         </ListItem>
         {categories.map(({ id, children }) => (
           <React.Fragment key={id}>
             <ListItem className={classes.categoryHeader}>
-              <ListItemText
-                classes={{
-                  primary: classes.categoryHeaderPrimary,
-                }}
-              >
-                {id}
-              </ListItemText>
             </ListItem>
             {children.map(({ id: childId, icon, active, path }) => (
               <ListItem

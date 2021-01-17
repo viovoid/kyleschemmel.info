@@ -16,7 +16,7 @@ const Footer = (props) => {
       <footer className={classes.footer}>
         <Typography variant="body2" color="textSecondary" align="center">
           {'Copyright © '}
-          <Link color="inherit" href="https://mirrod.in/">
+          <Link color="inherit" href="https://kyleschemmel.info">
             Kyle Schemmel
           </Link>{' '}
           {new Date().getFullYear()}
@@ -25,7 +25,7 @@ const Footer = (props) => {
           Built and hosted using free software exclusively
         </Typography>
         <Typography variant="body2" color="textSecondary" align="center">
-          Source available <Link href="https://gitlab.com/biovoid/kyleschemmel.info">here</Link>.
+          Source available <Link href="https://gitlab.com/biovoid/kyleschemmel.info">here</Link>
         </Typography>
       </footer>
     </>
