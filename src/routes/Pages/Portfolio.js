@@ -38,7 +38,7 @@ const Portfolio = (props) => {
               <Typography>{p.description}</Typography>
             </Grid>
             <Grid item sm={12} md={4}>
-              <img src={`/img/${p.image}.png`} alt={p.title} className={classes.image} />
+              {p.image && <img src={`/img/${p.image}.png`} alt={p.title} className={classes.image} />}
             </Grid>
           </Grid>
         </Card>
